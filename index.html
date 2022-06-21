@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokebola</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .pokebola {
+      margin: auto;
+      width: 250px;
+      height: 250px;
+      border: .25rem solid currentColor;
+      border-radius: 50%;
+      background-image: linear-gradient(#ff3e32 40%, #565658 40%, #565658 60%, #fff 60%);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+    }
+
+    .circle {
+      margin: auto;
+      width: 5.9375rem;
+      height: 5.9375rem;
+      border: .25rem solid currentColor;
+      border-radius: 50%;
+      background-color: #565658;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    .circle::before {
+      content: '';
+      border: inherit;
+      background-color: #fff;
+      width: 3.75rem;
+      height: 3.75rem;
+      border-radius: 50%;
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+
+    .circle::after {
+      content: '';
+      border: inherit;
+      background-color: #fff;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+
+    .circle::before,
+    .circle::after {
+      content: '';
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    .line {
+      position: absolute;
+      width: 100%;
+      height: .25rem;
+      background-color: #000;
+      top: 40%;
+      box-shadow: 0 2.75rem;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="pokebola">
+    <div class="line"></div>
+    <div class="circle"></div>
+  </div>
+</body>
+
+</html>
